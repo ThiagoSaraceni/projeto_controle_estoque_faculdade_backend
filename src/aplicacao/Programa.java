@@ -72,7 +72,9 @@ public class Programa {
                 	repeticao = !verificarRetornoTelaInicial(sc);
                     break;
                     
+                //CASO 4 AUMENTAR A QUANTIDADE DE UM PRODUTO
                 case 4:
+                	//Digite o codigo do produto, se encontrar o produto aumente a quantidade dele pela qual o usuario digitar.
                     System.out.print("Digite o código do produto para aumentar a quantidade: ");
                     int codigoProduto = sc.nextInt();
                     if (list.buscarProdutoPorCodigo(codigoProduto) != null) {
@@ -84,7 +86,9 @@ public class Programa {
                     }
                     repeticao = !verificarRetornoTelaInicial(sc);
                     break;
+                //CASO 5 DIMINUIR QUANTIDADE DE UM PRODUTO 
                 case 5:
+                	//Digite o codigo do produto, se encontrar o produto diminua a quantidade dele pela qual o usuario digitar.
                 	System.out.print("Digite o código do produto para diminuir a quantidade: ");
                     int codigoProdutoDiminuir = sc.nextInt();
                     if (list.buscarProdutoPorCodigo(codigoProdutoDiminuir) != null) {
@@ -115,6 +119,7 @@ public class Programa {
         sc.close();
     }
     
+    //Funcao para perguntar se o usuario deseja voltar a tela principal.
     public static boolean verificarRetornoTelaInicial(Scanner sc) {
         System.out.println("Deseja voltar à tela inicial? s/n? ");
         String resp = sc.next();

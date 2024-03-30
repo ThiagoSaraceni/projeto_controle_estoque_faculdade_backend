@@ -7,12 +7,18 @@ import java.util.List;
 public class ListapProdutos {
 	 private Produto p;
 	 
+	 
+	 //Criando a lista.
 	 List <Produto> listaProdutos = new ArrayList<>();
 	 
+	 
+	 //Método para adicionar um produto na lista.
 	 public void adicionarProduto(Produto p) {
 		 listaProdutos.add(p);
 	 }
 	 
+	 
+	 //Método para remover um produto
 	 public void removerProduto(int codigo) {
 		// Usa um iterador para percorrer a lista de produtos
 	        Iterator<Produto> iterator = listaProdutos.iterator();
@@ -29,7 +35,9 @@ public class ListapProdutos {
 	        System.out.println("Nenhum produto encontrado com o código fornecido.");
 	 }
 	 
+	 //Método para mostrar produto
 	 public void mostrarProdutos() {
+		 //Se lista vazia, escreva nenhum produto cadastrado, senao mostre os produtos
 		 if(listaProdutos.isEmpty()) {
 			 System.out.println("Lista vazia nenhum produto cadastrado!.");
 		 } else {
@@ -43,7 +51,9 @@ public class ListapProdutos {
 		 }
 	 }
 	 
+	 //Método para buscar produto por código
 	 public Produto buscarProdutoPorCodigo(int codigo) {
+		 //Um for que leia a lista inteira, se encontrar o codigo digitado retorne o produto.
 		    for (Produto produto : listaProdutos) {
 		        if (produto.getCodigo_produto() == codigo) {
 		            return produto;
@@ -52,6 +62,7 @@ public class ListapProdutos {
 		    return null; // Retorna null se o produto não for encontrado
 		}
 	 
+	 //Método para aumentar a quantidade de produtos
 	 public void aumentarQuantidadeProduto(int codigo, int quantidade) {
 		    Produto produto = buscarProdutoPorCodigo(codigo);
 		    if (produto != null) {
@@ -61,7 +72,8 @@ public class ListapProdutos {
 		        System.out.println("Produto não encontrado.");
 		    }
 		}
-
+	 
+	 //Método para diminuir a quantidade de um produto
 	 public void diminuirQuantidadeProduto(int codigo, int quantidade) {
 		    Produto produto = buscarProdutoPorCodigo(codigo);
 		    if (produto != null) {

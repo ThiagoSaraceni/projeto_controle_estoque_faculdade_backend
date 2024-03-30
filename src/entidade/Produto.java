@@ -8,10 +8,8 @@ public class Produto {
 	private int quantidade;
 	private String localizacao;
 	
-	
-	
 
-
+	//Construtor
 	public Produto(int codigo_produto, String descricao, double preco, int quantidade, String localizacao) {
 		this.codigo_produto = codigo_produto;
 		this.descricao = descricao;
@@ -20,7 +18,7 @@ public class Produto {
 		this.localizacao = localizacao;
 	}
 
-
+	//Getters and Setters
 	public int getCodigo_produto() {
 		return codigo_produto;
 	}
@@ -61,8 +59,6 @@ public class Produto {
 	}
 
 	
-	
-	
 	public int getQuantidade() {
 		return quantidade;
 	}
@@ -72,17 +68,19 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-
+	//toString
 	@Override
 	public String toString() {
 		return "Produto [codigo_produto=" + codigo_produto + ", descricao=" + descricao + ", preco=" + preco
 				+ ", localizacao=" + localizacao + "]";
 	}
 	
+	//Método para aumentar a quantidade de um produto
 	public void adicionarEntradaProduto(int n) {
 		this.quantidade = this.quantidade + n;
 	}
 	
+	//Método para diminuir a quantidade de um produto
 	public void adicionarSaidaProduto(int n) {
 		this.quantidade = this.quantidade - n;
 	}
